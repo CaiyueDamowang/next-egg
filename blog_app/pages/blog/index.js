@@ -1,14 +1,23 @@
 import React, { Fragment, useState } from 'react';
 import Router from 'next/router';
 import Head from 'next/head';
-import { Row, Col, Pagination } from 'antd'
+
 import Header from '@/components/Header'
-import '@/public/styles/pages/blog.less'
+import PostsList from '@/components/PostsList'
+import Content from '@/components/Content'
+
 import api from "@/network/blog";
+import '@/public/styles/pages/blog.less'
 
 export default function Blog(params) {
-    const potsContent = ['vue', 'ts', 'react']
-
+    const potsContent = [
+        { title: 'vue', route: 'vue'},
+        { title: 'react', route: 'react'},
+        { title: 'Ts', route: 'typescript'},
+        { title: 'V8', route: 'V8'},
+        { title: 'Js', route: 'javascript'},
+        
+    ]
     const [posts, setPosts] = useState(params[0])
     // console.log(posts)
     return (
@@ -20,7 +29,13 @@ export default function Blog(params) {
             </Head>
             <Header></Header>
 
-            <section className="posts-section"></section>
+            <section className="posts-section">
+                    {/* 目录控件 */}
+                <div className="posts-list-wrap">
+                    <Content dataList={potsContent}></Content>
+                    <PostsList dataList={posts}></PostsList>
+                </div>
+            </section>
             <footer>
                 <a href = 'http://CaiyueDamowang.github.io'>view my github</a>
             </footer>

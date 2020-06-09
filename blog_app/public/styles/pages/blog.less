@@ -1,7 +1,60 @@
 .container {
     display: block;
     position: relative;
-    
-    
+    height: 100vh;
+    .posts-section {
+        display: block;
+        height: calc(100% - 60px - 2.6rem);
+        .posts-list-wrap {
+            box-sizing: border-box;
+            position: relative;
+            padding: 80px 30px 10% 30px;
+            margin: 0 auto;
+            height: 100%;
+            width: 60%;
+            overflow: scroll;
+            li {
+                display: flex;
+                width: 100%;
+                justify-content: space-around;
+            }
+            .posts-list {
+                li {
+         
+                    padding: 20px 10px;
+                    justify-content: space-between;
+                    list-style: none;
+                    font-size: 1.2rem;
+                    line-height: 1.2rem;
+                    font-weight: bolder;
+                }
+                time {
+                    font-weight: lighter;
+                    font-size: 0.6rem;
+                    line-height: 1.2rem;
+                    color: #999;
+                }
+            }
+            .content-list-wrap {
+                position: absolute;
+
+                right: 0;
+                bottom: 10%;
+                min-width: 150px;
+                border-radius: 5px;
+                .content-list {
+                    width: 100%;
+                    a {
+                        display: inline-block;
+                        margin: 0 40px;
+                        line-height: 1.5rem;
+                        color: #000;
+                        text-decoration: underline;
+                        list-style: square;
+                    }
+                }
+            }
+        }
+    }
 
 }
