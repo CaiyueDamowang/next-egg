@@ -12,7 +12,7 @@
         flex: 1;
         display: flex;
         flex-flow: row-reverse;
-
+        position: relative;
         .title {
             color: #999;
             height: 100%;
@@ -21,10 +21,16 @@
             padding: 0 2rem;
             font-weight: bolder;
         }
-
         &-item {
             width: 8rem;
             text-align: center;
+        }
+        .subItem {
+            display: none;
+        }
+        &:hover .subItem, .subItem:hover{
+            display: block;
+
         }
     }
 }
